@@ -15,7 +15,7 @@ const Data = () => {
 
     return (
         <>
-            <View />
+            <View dataList={dataList} />
         </>
     )
 }
