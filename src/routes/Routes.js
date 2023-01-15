@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 
 const Home = lazy(() => import('../pages/Home'));
 const About = lazy(() => import('../pages/About'));
+const Data = lazy(() => import('../pages/Data'));
 
 const ProjectRoutes = () => {
   return (
@@ -21,6 +22,14 @@ const ProjectRoutes = () => {
           element={
             <Suspense fallback="Loading...">
               <About />
+            </Suspense>
+          }
+        />
+        <Route
+          path="data/view"
+          element={
+            <Suspense fallback="Loading...">
+              <Data />
             </Suspense>
           }
         />
