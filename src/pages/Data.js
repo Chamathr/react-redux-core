@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { fetchData } from "../redux/slices/dataSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { getData } from "../redux/actions/dataAction";
+import { connect } from "react-redux";
 import { selectDataList } from "../redux/selectors/dataSelector";
 import View from "../components/data/View";
 
@@ -10,7 +11,7 @@ const Data = () => {
     const dataList = useSelector(selectDataList)
 
     useEffect(() => {
-        dispatch(fetchData())
+        dispatch(getData())
     }, [])
 
     return (
@@ -20,4 +21,6 @@ const Data = () => {
     )
 }
 
-export default Data
+export default connect(
+    getData
+)(Data);

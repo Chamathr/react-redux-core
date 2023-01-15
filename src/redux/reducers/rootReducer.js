@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import storage from "redux-persist/lib/storage";
-import dataReducer from "./slices/dataSlice";
+import { dataReducer } from "./dataReducer";
 
 const rootPersistConfig = {
   key: "root",
