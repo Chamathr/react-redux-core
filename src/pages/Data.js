@@ -11,7 +11,7 @@ const Data = () => {
 
     useEffect(() => {
         dispatch(fetchData())
-    }, [])
+    })
 
     return (
         <>
