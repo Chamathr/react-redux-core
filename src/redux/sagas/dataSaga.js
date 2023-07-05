@@ -12,7 +12,7 @@ import {
   getDataApi,
 } from "../services/dataService";
 
-export function* getData() {
+function* getData() {
   yield takeEvery(getDataActions.GET_DATA, function* () {
     try {
       yield put(setDataLoading('loading'));
@@ -27,7 +27,5 @@ export function* getData() {
 }
 
 export default function* rootSaga() {
-  yield all([
-    fork(getData)
-  ]);
+  yield takeEvery(getDataActions.GET_DATA, getData);
 }
